@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Rusty Raygun Blog</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/main-style.css">
+ 
+        <script type='text/javascript' src="/core/dist/ionic.js"></script>
+        <link rel="stylesheet" href="core/css/ionic.bundle.css">
+        <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+        
+
+
+    
+
+    </head>
+    <body>
+        <ion-content>
+
+                <ion-grid>
+                        <ion-row class="row_one">
+                        <ion-col class="col-one">
+                            
+                            <h3>Rusty Raygun</h3>
+                            <p>Don't Stop The Music.</p>
+                            <p>Est. 2019</p>
+                            <ion-button class="main-button" size="small" color="dark" fill="outline" href="index.html">Home</ion-button>
+                            <ion-button size="small" color="medium" fill="outline" href="blog.html">Dev Journal</ion-button>
+                            <!-- <ion-button size="small" color="dark" fill="outline" href="notes.html">Arcade</ion-button> -->
+                            <ion-button size="small" color="dark" fill="outline" href="mailto:rhinowolly@gmail.com?Subject=Dev-Design" target="_top">Contact</ion-button>
+                            
+                        </ion-col>
+                        <ion-col class="col-two">
+                            
+                        </ion-col>
+                        </ion-row> 
+                        <ion-row class="black-divider"></ion-row>
+                        
+                     
+                        <ion-row>
+                                <div><div id="app">
+                                        
+                                        <ul>
+                                            <li v-for="item in items">
+                                                <h3>{{ item['fields']['title'] }}</h3>
+                                                <a v-bind:href="item['fields']['page-link']" target="self">
+                                                    <img :src="item['fields']['image-banner'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['image-banner']" width="95%">
+                                                </a>
+                                                <div class="learn-more"><h4 >{{ item['fields']['sub-title'] }}</h4></div>
+                                                <div class="learn-more"><p>{{ item['fields']['preview-text'] }}</p></div>
+                                                <p><strong>Author: </strong>{{ item['fields']['author'] }}</p>
+                                                <ion-button class="chip" size="small" color="dark" fill="outline">{{ item['fields']['tag'] }}</ion-button>
+                                                
+                                                
+                                            </li>
+                                        </ul>            
+                                    </div></div><!--app-->
+                           </ion-row>
+                        
+            <ion-row class="footer-row"></ion-row>
+            
+                        </ion-grid>
+
+    
+    <script type="text/javascript" src="js/vue-dev-version.js"></script>
+    <script type="text/javascript" src="js/axios.min.js"></script>
+
+    
+    
+    <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                   
+                    items: []
+                },
+                mounted: function(){
+                   this.loadItems(); 
+                },
+                methods: {
+                    loadItems: function(){
+                        var self = this
+                        var app_id = "app7ZkaetNhJJOCPf";
+                        var app_key = "key6K51B1rFTZQbDd";
+                        this.items = []
+                        axios.get("https://api.airtable.com/v0/app7ZkaetNhJJOCPf/Table%201",
+                            { 
+                                headers: { Authorization: "Bearer "+app_key } 
+                            }
+                        ).then(function(response){
+                            self.items = response.data.records
+                        }).catch(function(error){
+                            console.log(error)
+                        })
+                    }
+                }
+            })
+        
+    
+    </script>
+
+</div>
+
+            
+
+
+
+            
+        </ion-content>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        
+    </body>
+</html>
+
+<!--STYLE-->
+<style>
+  
+        @media only screen and (max-width: 600px) {
+                  body {
+              background: #1d1d1d;
+                      }}
+      
+       @media only screen and (max-width: 600px) {
+                  #homelink {
+              visibility: hidden;
+                      }}             
+      
+          h1  {
+              text-align: center; 
+          }
+      
+          @media only screen and (max-width: 600px) {
+                  #headline {
+              color: rgb(194, 194, 194)
+                      }}
+      
+          #connect {
+              visibility: hidden;
+          }
+      
+          @media only screen and (max-width: 320px) {
+                  #connect {
+              color: chocolate;
+              visibility: visible
+                      }}
+      
+          ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              display: flex;
+              justify-content: center;
+              flex-wrap: wrap;
+              
+          }
+      
+          li {
+              width: 550px;
+              height: 100%;
+              background: #dddddd;
+              border-radius: 0px;
+              border: solid 3px;
+              padding: 10px;
+              padding-top: 5px;
+              padding-bottom: 35px;
+              text-align: center;
+              margin: 20px;
+              transition: all ease-in-out 0.3s;
+              color: rgb(65, 65, 65, 1);
+              overflow: hidden;
+          }
+      
+          @media only screen and (max-width: 600px) {
+                  li {
+              width: 450px;
+              height: 100%;
+              background: #d8d8d8;
+              border-radius: 5px;
+              border: solid 2px;
+              padding-top: 2px;
+              padding-right: 14px;
+              text-align: center;
+              margin: 2px;
+              transition: all ease-in-out 0.4s;
+              color: rgb(66, 66, 66);
+              justify-content: left;
+                      
+                      }}
+      
+          li:hover {
+              width: 550px;
+              height: 100%;
+              background: #f3f3f3;
+              border-radius: 5px;
+              border: solid 2.3px;
+              padding-top: 5px;
+              text-align: center;
+              margin: 20px;
+              transition: all ease-in-out 0.4s;
+              color: rgb(65, 65, 65, 1);
+          }
+      
+          @media only screen and (max-width: 600px) {
+              li:hover {
+              width: 95%;
+              height: 100%;
+              background: #ffffff;
+              border-radius: 5px;
+              border: solid 2.4px;
+              padding-top: 5px;
+              text-align: center;
+              margin: 2px;
+              transition: all ease-in-out 0.4s;
+              justify-content: center;
+              color: rgb(20, 20, 20);
+                      
+                      }}
+      
+          .learn-more {
+              height: 10%;
+              opacity: 0.5;
+              color: rgb(0, 0, 0);
+              overflow: -moz-hidden-unscrollable;
+              padding-left: 10px;
+              padding-right: 10px;
+      
+          }
+      
+          .learn-more:hover {
+              height: 100%;
+              opacity: 1;
+              color: rgb(65, 65, 65, 1);
+              overflow: visible;
+      
+          }
+          @media only screen and (max-width: 600px) {
+              .learn-more:hover {
+                  opacity: 1;
+                  color: rgb(31, 31, 31);
+      
+              }}
+      
+          @media only screen and (max-width: 600px) {
+              .learn-more {
+                  opacity: 1;
+                  color: rgb(0, 0, 0);
+      
+              }}
+
+              .black-divider {
+                  background-color: black;
+                  height: 2px;
+              }
+
+              .featured-col-1 {
+                  width: 50%;
+                  min-width: 320px;
+                  height: 450px;
+                  background-image: url('../images/bkgrnd-1.jpg');
+                  display: inline-block;
+                  padding-left: 33px;
+              }
+
+              .featured-col-2 {
+                  width: 50%;
+                  min-width: 320px;
+                  height: 450px;
+                  background-image: url('../images/bkgrnd-2.jpg');
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  position: relative;
+                  display: inline-block;
+                  padding-left: 33px;
+              }
+
+             .main-button {
+                 background-color: #a9ec6d;
+             }
+
+             .row_one {
+                 background-image: url('../images/rusty-raygun-logo-horz.svg');
+                 background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                border: solid 1px;
+                border-color: #000000;
+                padding-top: 63px;
+                }
+                
+                .footer-row {
+                    height: 22px;
+                    background-color: #a9ec6d;
+
+                }
+      </style>
