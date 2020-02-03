@@ -1,0 +1,13 @@
+.demo-row {
+    background-color: lightgrey;
+    display: inline-flex;
+    border-bottom: solid 2pt;
+    padding-bottom: 13px;
+    width: 100%;
+    
+}
+
+.demolisting {
+    min-width: 450px;
+    
+}
