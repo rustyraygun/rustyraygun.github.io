@@ -1,387 +1,268 @@
-
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Rusty Raygun Home</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/main-style.css">
- 
-        <script type='text/javascript' src="/core/dist/ionic.js"></script>
-        <link rel="stylesheet" href="core/css/ionic.bundle.css">
-        
-     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-<script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
-        
-        
+<html xmlns='http://www.w3.org/1999/xhtml' lang='' xml:lang=''>
+<head>
+	<meta charset='utf-8' />
+	<meta name='viewport' content='width=device-width, user-scalable=no' />
+	<link id='-gd-engine-icon' rel='icon' type='image/png' href='favicon.png' />
+	<title>Rusty Raygun Website 01</title>
+	<style type='text/css'>
+
+		body {
+			touch-action: none;
+			margin: 0;
+			border: 0 none;
+			padding: 0;
+			text-align: center;
+			background-color: black;
+		}
+
+		#canvas {
+			display: block;
+			margin: 0;
+			color: white;
+		}
+
+		#canvas:focus {
+			outline: none;
+		}
+
+		.godot {
+			font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
+			color: #e0e0e0;
+			background-color: #3b3943;
+			background-image: linear-gradient(to bottom, #403e48, #35333c);
+			border: 1px solid #45434e;
+			box-shadow: 0 0 1px 1px #2f2d35;
+		}
 
 
-    
+		/* Status display
+		 * ============== */
 
-    </head>
-    <body>
-        <ion-content>
+		#status {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			/* don't consume click events - make children visible explicitly */
+			visibility: hidden;
+		}
 
-                <ion-grid>
-                        <ion-row class="row_one">
-                        <ion-col class="col-one">
-                            
-                            <h3>Rusty Raygun</h3>
-                            <p>Interactive Development</p>
-                            <p>Est. 2020</p>
-                            <ion-button class="main-button" size="small" color="medium" fill="outline" href="index.html">Home</ion-button>
-                            <!-- <ion-button size="small" color="dark" fill="outline" href="devlog.html">DevLog</ion-button> -->
-                            <!-- <ion-button size="small" color="dark" fill="outline" href="notes.html">Arcade</ion-button> -->
-                            <ion-button size="small" color="dark" fill="outline" href="mailto:rhinowolly@gmail.com?Subject=Dev-Design" target="_top">Contact</ion-button>
-                            
-                        </ion-col>
-                        <ion-col class="col-two">
-                            
-                        </ion-col>
-                        </ion-row> 
-                       
+		#status-progress {
+			width: 366px;
+			height: 7px;
+			background-color: #38363A;
+			border: 1px solid #444246;
+			padding: 1px;
+			box-shadow: 0 0 2px 1px #1B1C22;
+			border-radius: 2px;
+			visibility: visible;
+		}
 
-                        <ion-row class="product-row">
-                            <iframe width="540" height="960" src="https://gotm.io/rustyraygun/sebo?forceFullscreen=true"></iframe>
-                             </ion-row>
+		@media only screen and (orientation:portrait) {
+			#status-progress {
+				width: 61.8%;
+			}
+		}
 
-                    <!-- ROW ONE--DEMOS-->
-                    <ion-row class="demo-row">
-                        <ion-col class="demolisting"><br><br><img src="images/logo-r.png" width="250px"><h2>"Black Forest 12 | Section 1.1"</h2><p>Version: IAKU StoryBook 1.3</p><a href="https://rustyraygun.itch.io/black-forest-12-s1" target="_blank">Download</a><br></ion-col><br><br>
-                        
-                        <ion-col class="demolisting"><br><br><img src="images/escapefactory9.jpg" width="250px"><h2>"Escape Factory 9"</h2><p>Version: 1.0 Alpha Demo</p><a href="https://rustyraygun.itch.io/escape-factory-9-alpha1" target="_blank">Download</a><br></ion-col>
-                        
-                         <ion-col class="demolisting"><br><br><img src="images/obaxrider.jpg" width="250px"><h2>"Obax Rider"</h2><p>Version: 1.0 Alpha Demo</p><a href="https://rustyraygun.itch.io/obax-rider-alpha1" target="_blank">Download</a><br></ion-col><br><br>
-                        
-                        <ion-col class="demolisting"><br><br><img src="images/daggercards.jpg" width="250px"><h2>"A Round of Dagger Cards with Kratz"</h2><p>Version: 1.3 Alpha Demo</p><a href="https://rustyraygun.itch.io/copper-dagger-cards-with-kratz" target="_blank">Download</a><br></ion-col>
-                    
-                    
-                    </ion-row>
-                        <ion-row class="black-divider"></ion-row>
-                        
-                        <ion-row class="featured-post-row">
-                            <ion-col class="featured-col-1">
-                                    <img src="images/IMG_008-raygun-sketch-text-MEDIUM.png" alt="LOGO" width="50%">
-                                <p>Stay in touch. Join Our Mailing List </p>
-                                <ion-button class="main-button" size="small" color="dark" fill="outline" href="https://forms.gle/zYDJZYrp1R6wJFyx5" target="blank">Sign-Up</ion-button>
+		#status-progress-inner {
+			height: 100%;
+			width: 0;
+			box-sizing: border-box;
+			transition: width 0.5s linear;
+			background-color: #202020;
+			border: 1px solid #222223;
+			box-shadow: 0 0 1px 1px #27282E;
+			border-radius: 3px;
+		}
 
-                            </ion-col>
-                            <ion-col class="featured-col-2">
-                                    
-                                    <ion-button class="main-button" size="small" color="dark" fill="outline" href="devlog.html">DevLog</ion-button>
-    
-                                </ion-col>
-                            <ion-col class="featured-col-3">
-                                    
-                                <ion-button class="main-button" size="small" color="dark" fill="outline" target="_blank" href="https://www.patreon.com/bePatron?u=30359245">Patreon</ion-button><br>
-                                <ion-button class="main-button" size="small" color="dark" fill="outline" target="_blank" href="https://cash.app/$rustyraygun">Cash App</ion-button><br>
-                                    <ion-button class="main-button" size="small" color="dark" fill="outline" href="shop.html">Shop</ion-button>
-    
-                                </ion-col>
-                        </ion-row>
-                        <!--Divider-->
-                        <ion-row class="black-divider"></ion-row>
-                        
+		#status-indeterminate {
+			visibility: visible;
+			position: relative;
+		}
 
-                  <!--     <ion-row>
-                            <div><div id="app">
-                                    
-                                    <ul>
-                                        <li v-for="item in items">
-                                            <h3>{{ item['fields']['title'] }}</h3>
-                                            <a v-bind:href="item['fields']['page-link']" target="self">
-                                                <img :src="item['fields']['image-banner'][0]['thumbnails']['large']['url']" alt="" v-if="item['fields']['image-banner']" width="95%">
-                                            </a>
-                                            <div class="learn-more"><h4 >{{ item['fields']['sub-title'] }}</h4></div>
-                                            <div class="learn-more"><p>{{ item['fields']['preview-text'] }}</p></div>
-                                            <p><strong>Author: </strong>{{ item['fields']['author'] }}</p>
-                                            <ion-button class="chip" size="small" color="dark" fill="outline">{{ item['fields']['tag'] }}</ion-button>
-                                            
-                                            
-                                        </li>
-                                    </ul>            
-                                
-                       </ion-row> -->
-                        
-                    
-      
-            <ion-row class="footer-row"></ion-row>
-            
-                        </ion-grid>
+		#status-indeterminate > div {
+			width: 4.5px;
+			height: 0;
+			border-style: solid;
+			border-width: 9px 3px 0 3px;
+			border-color: #2b2b2b transparent transparent transparent;
+			transform-origin: center 21px;
+			position: absolute;
+		}
 
-    
-    <script type="text/javascript" src="js/vue-dev-version.js"></script>
-    <script type="text/javascript" src="js/axios.min.js"></script>
+		#status-indeterminate > div:nth-child(1) { transform: rotate( 22.5deg); }
+		#status-indeterminate > div:nth-child(2) { transform: rotate( 67.5deg); }
+		#status-indeterminate > div:nth-child(3) { transform: rotate(112.5deg); }
+		#status-indeterminate > div:nth-child(4) { transform: rotate(157.5deg); }
+		#status-indeterminate > div:nth-child(5) { transform: rotate(202.5deg); }
+		#status-indeterminate > div:nth-child(6) { transform: rotate(247.5deg); }
+		#status-indeterminate > div:nth-child(7) { transform: rotate(292.5deg); }
+		#status-indeterminate > div:nth-child(8) { transform: rotate(337.5deg); }
 
-    
+		#status-notice {
+			margin: 0 100px;
+			line-height: 1.3;
+			visibility: visible;
+			padding: 4px 6px;
+			visibility: visible;
+		}
+	</style>
 
+</head>
+<body>
+	<canvas id='canvas'>
+		HTML5 canvas appears to be unsupported in the current browser.<br />
+		Please try updating or use a different browser.
+	</canvas>
+	<div id='status'>
+		<div id='status-progress' style='display: none;' oncontextmenu='event.preventDefault();'><div id ='status-progress-inner'></div></div>
+		<div id='status-indeterminate' style='display: none;' oncontextmenu='event.preventDefault();'>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div id='status-notice' class='godot' style='display: none;'></div>
+	</div>
 
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-               
-                items: []
-            },
-            mounted: function(){
-               this.loadItems(); 
-            },
-            methods: {
-                loadItems: function(){
-                    var self = this
-                    var app_id = "app7ZkaetNhJJOCPf";
-                    var app_key = "key6K51B1rFTZQbDd";
-                    this.items = []
-                    axios.get("https://api.airtable.com/v0/app7ZkaetNhJJOCPf/Table%201",
-                        { 
-                            headers: { Authorization: "Bearer "+app_key } 
-                        }
-                    ).then(function(response){
-                        self.items = response.data.records
-                    }).catch(function(error){
-                        console.log(error)
-                    })
-                }
-            }
-        })
-    
+	<script type='text/javascript' src='index.js'></script>
+	<script type='text/javascript'>//<![CDATA[
 
-</script>
+		var engine = new Engine;
+		var setStatusMode;
+		var setStatusNotice;
 
-            
+		(function() {
 
+			const EXECUTABLE_NAME = 'index';
+			const MAIN_PACK = 'index.pck';
+			const INDETERMINATE_STATUS_STEP_MS = 100;
 
-<!--Loader-Component-->
-            
-        </ion-content>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        
-    </body>
+			var canvas = document.getElementById('canvas');
+			var statusProgress = document.getElementById('status-progress');
+			var statusProgressInner = document.getElementById('status-progress-inner');
+			var statusIndeterminate = document.getElementById('status-indeterminate');
+			var statusNotice = document.getElementById('status-notice');
+
+			var initializing = true;
+			var statusMode = 'hidden';
+
+			var animationCallbacks = [];
+			function animate(time) {
+				animationCallbacks.forEach(callback => callback(time));
+				requestAnimationFrame(animate);
+			}
+			requestAnimationFrame(animate);
+
+			function adjustCanvasDimensions() {
+				var scale = window.devicePixelRatio || 1;
+				var width = window.innerWidth;
+				var height = window.innerHeight;
+				canvas.width = width * scale;
+				canvas.height = height * scale;
+				canvas.style.width = width + "px";
+				canvas.style.height = height + "px";
+			}
+			animationCallbacks.push(adjustCanvasDimensions);
+			adjustCanvasDimensions();
+
+			setStatusMode = function setStatusMode(mode) {
+
+				if (statusMode === mode || !initializing)
+					return;
+				[statusProgress, statusIndeterminate, statusNotice].forEach(elem => {
+					elem.style.display = 'none';
+				});
+				animationCallbacks = animationCallbacks.filter(function(value) {
+					return (value != animateStatusIndeterminate);
+				});
+				switch (mode) {
+					case 'progress':
+						statusProgress.style.display = 'block';
+						break;
+					case 'indeterminate':
+						statusIndeterminate.style.display = 'block';
+						animationCallbacks.push(animateStatusIndeterminate);
+						break;
+					case 'notice':
+						statusNotice.style.display = 'block';
+						break;
+					case 'hidden':
+						break;
+					default:
+						throw new Error('Invalid status mode');
+				}
+				statusMode = mode;
+			}
+
+			function animateStatusIndeterminate(ms) {
+
+				var i = Math.floor(ms / INDETERMINATE_STATUS_STEP_MS % 8);
+				if (statusIndeterminate.children[i].style.borderTopColor == '') {
+					Array.prototype.slice.call(statusIndeterminate.children).forEach(child => {
+						child.style.borderTopColor = '';
+					});
+					statusIndeterminate.children[i].style.borderTopColor = '#dfdfdf';
+				}
+			}
+
+			setStatusNotice = function setStatusNotice(text) {
+
+				while (statusNotice.lastChild) {
+					statusNotice.removeChild(statusNotice.lastChild);
+				}
+				var lines = text.split('\n');
+				lines.forEach((line) => {
+					statusNotice.appendChild(document.createTextNode(line));
+					statusNotice.appendChild(document.createElement('br'));
+				});
+			};
+
+			engine.setProgressFunc((current, total) => {
+
+				if (total > 0) {
+					statusProgressInner.style.width = current/total * 100 + '%';
+					setStatusMode('progress');
+					if (current === total) {
+						// wait for progress bar animation
+						setTimeout(() => {
+							setStatusMode('indeterminate');
+						}, 500);
+					}
+				} else {
+					setStatusMode('indeterminate');
+				}
+			});
+
+			function displayFailureNotice(err) {
+				var msg = err.message || err;
+				console.error(msg);
+				setStatusNotice(msg);
+				setStatusMode('notice');
+				initializing = false;
+			};
+
+			if (!Engine.isWebGLAvailable()) {
+				displayFailureNotice('WebGL not available');
+			} else {
+				setStatusMode('indeterminate');
+				engine.setCanvas(canvas);
+				engine.startGame(EXECUTABLE_NAME, MAIN_PACK).then(() => {
+					setStatusMode('hidden');
+					initializing = false;
+				}, displayFailureNotice);
+			}
+		})();
+	//]]></script>
+</body>
 </html>
 
-<!--STYLE-->
-<style>
-  
-        @media only screen and (max-width: 600px) {
-                  body {
-              background: #1d1d1d;
-                      }}
-      
-       @media only screen and (max-width: 600px) {
-                  #homelink {
-              visibility: hidden;
-                      }}             
-      
-          h1  {
-              text-align: center; 
-          }
-      
-          @media only screen and (max-width: 600px) {
-                  #headline {
-              color: rgb(194, 194, 194)
-                      }}
-      
-          #connect {
-              visibility: hidden;
-          }
-      
-          @media only screen and (max-width: 320px) {
-                  #connect {
-              color: chocolate;
-              visibility: visible
-                      }}
-      
-          ul {
-              list-style-type: none;
-              margin: 0;
-              padding: 0;
-              display: flex;
-              justify-content: center;
-              flex-wrap: wrap;
-              
-          }
-      
-          li {
-              width: 550px;
-              height: 100%;
-              background: #dddddd;
-              border-radius: 0px;
-              border: solid 3px;
-              padding: 10px;
-              padding-top: 5px;
-              padding-bottom: 35px;
-              text-align: center;
-              margin: 20px;
-              transition: all ease-in-out 0.3s;
-              color: rgb(65, 65, 65, 1);
-              overflow: hidden;
-          }
-      
-          @media only screen and (max-width: 600px) {
-                  li {
-              width: 450px;
-              height: 100%;
-              background: #d8d8d8;
-              border-radius: 5px;
-              border: solid 2px;
-              padding-top: 2px;
-              padding-right: 14px;
-              text-align: center;
-              margin: 2px;
-              transition: all ease-in-out 0.4s;
-              color: rgb(66, 66, 66);
-              justify-content: left;
-                      
-                      }}
-      
-          li:hover {
-              width: 550px;
-              height: 100%;
-              background: #f3f3f3;
-              border-radius: 5px;
-              border: solid 2.3px;
-              padding-top: 5px;
-              text-align: center;
-              margin: 20px;
-              transition: all ease-in-out 0.4s;
-              color: rgb(65, 65, 65, 1);
-          }
-      
-          @media only screen and (max-width: 600px) {
-              li:hover {
-              width: 95%;
-              height: 100%;
-              background: #ffffff;
-              border-radius: 5px;
-              border: solid 2.4px;
-              padding-top: 5px;
-              text-align: center;
-              margin: 2px;
-              transition: all ease-in-out 0.4s;
-              justify-content: center;
-              color: rgb(20, 20, 20);
-                      
-                      }}
-      
-          .learn-more {
-              height: 100%;
-              opacity: 1;
-              color: rgb(5, 5, 5);
-              overflow: -moz-hidden-unscrollable;
-              padding-left: 10px;
-              padding-right: 10px;
-      
-          }
-      
-          .learn-more:hover {
-              height: 100%;
-              opacity: 1;
-              color: rgb(65, 65, 65, 1);
-              overflow: visible;
-      
-          }
-          @media only screen and (max-width: 600px) {
-              .learn-more:hover {
-                  opacity: 1;
-                  color: rgb(31, 31, 31);
-      
-              }}
-      
-          @media only screen and (max-width: 600px) {
-              .learn-more {
-                  opacity: 1;
-                  color: rgb(0, 0, 0);
-      
-              }}
-
-              .black-divider {
-                  background-color: black;
-                  height: 2px;
-              }
-
-              .featured-col-1 {
-                  width: 50%;
-                  min-width: 320px;
-                  height: 450px;
-                  background-image: url('../images/bkgrnd-1.jpg');
-                  display: inline-block;
-                  padding-left: 33px;
-              }
-
-              .featured-col-2 {
-                  width: 50%;
-                  min-width: 320px;
-                  height: 450px;
-                  background-image: url('../images/edenscreenshot.png');
-                  background-position: center;
-                  background-repeat: no-repeat;
-                  background-size: cover;
-                  position: relative;
-                  display: inline-block;
-                  padding-left: 33px;
-              }
-    
-             .featured-col-3 {
-                  width: 50%;
-                  min-width: 320px;
-                  height: 450px;
-                  background-image: url('../images/support_rustyraygun.jpg');
-                  background-position: center;
-                  background-repeat: no-repeat;
-                  background-size: cover;
-                  position: relative;
-                  display: inline-block;
-                  padding-left: 33px;
-              }
-
-             .main-button {
-                 background-color: #a9ec6d;
-             }
-
-             .row_one {
-                 background-image: url('../images/rusty-raygun-logo-horz.svg');
-                 background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                position: relative;
-                border: solid 1px;
-                border-color: #000000;
-                padding-top: 63px;
-                }
-                
-                .footer-row {
-                    height: 22px;
-                    background-color: #a9ec6d;
-
-                }
-    
-    .demo-row {
-    background-color:aliceblue;
-    display: inline-flex;
-    border-bottom: solid 2pt;
-    padding-bottom: 13px;
-    width: 100%;
-    
-}
-      </style>
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
