@@ -1,0 +1,25 @@
+#top_bar {
+    background-color: rgb(49, 38, 58);
+    color: darkgray;
+    width: 100%;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 15px;
+   
+}
+
+#content {
+    
+    width: 800px;
+}
+#section {
+    display: inline-block;
+    color: white;
+    background-color: teal;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border-radius: 30px;
+}
