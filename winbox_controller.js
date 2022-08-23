@@ -1,5 +1,5 @@
 let box_color =   "#87118b";
-let html_1 = "<div id='winbox_bounding'> <h1 id='winbox_text'>Active Desktop Wallpapers</h1 id='winbox_text'><p  id='winbox_text'>Active Desktop Wallpaper created with the GDScript Javascript interface and Lively WallPapers.</p> <a href='https://rustyraygun.github.io/active_wallpapers/wallpaper_001/'><h4 id='winbox_linktext'>Project Page</h4></a> <img src='./images/homepage/lively_ui.gif'></></div>"
+let html_1 = "<div id='winbox_bounding'> <h1 id='winbox_text'>Active Desktop Wallpapers</h1 id='winbox_text'><p  id='winbox_text'>Active Desktop Wallpaper created with the GDScript Javascript interface and Lively WallPapers.</p> <a href='https://rustyraygun.github.io/active_wallpapers/wallpaper_001/'><h4 id='winbox_linktext'>Project Page</h4></a> <img src='./images/homepage/lively_UI.gif'></></div>"
 let html_2 = "<div id='winbox_bounding'> <h1 id='winbox_text'> IAKU Get Weather </h1 ><p id='winbox_text'>A Simple Weather App Prototype made With GDScript, and Rest-API.</p> <a href='https://lenardblair.github.io/get_weather/'><h4 id='winbox_linktext'>Open App</h4></a> <img src='./images/homepage/get_weather.png'></></div>"
 let html_3 = "<div id='winbox_bounding'> <h1 id='winbox_text'>Sebo Bounce v.1</h1> <a href='https://gotm.io/rustyraygun/sebo'><h3 id='winbox_linktext'>PLAY</h3></a> <img src='./images/homepage/sebo.jpg'></></div>"
 
